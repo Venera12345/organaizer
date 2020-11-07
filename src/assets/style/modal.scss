@@ -1,0 +1,30 @@
+.modal {
+  position: relative;
+  padding: 40px;
+  .btn-icon {
+    &.btn-close {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+  }
+.wrapper-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  .btn {
+    &:first-child {
+      margin-right: 10px;
+    }
+
+  }
+}
+
+  .text {
+    color: $color-title;
+    margin-top: 20px;
+    font-family: PTSansNarrow-Regular, sans-serif;
+    font-size: 19px;
+    margin-bottom: 45px;
+  }
+}

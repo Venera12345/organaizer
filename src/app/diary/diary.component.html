@@ -1,0 +1,41 @@
+<section class="container">
+  <div class="wrapper-header">
+    <h2 class="title">diary</h2>
+    <button class="btn">+</button>
+  </div>
+  <div class="wrapper-mobile">
+  <table cdk-table  [dataSource]="dataSource">
+    <ng-container cdkColumnDef="btn">
+      <th cdk-header-cell *cdkHeaderCellDef></th>
+      <td cdk-cell *cdkCellDef="let row">
+        <button class="btn-icon btn-edit"></button>
+        <button class="btn-icon btn-delete" (click)="delete(row)"></button>
+      </td>
+    </ng-container>
+    <ng-container cdkColumnDef="time">
+      <th cdk-header-cell *cdkHeaderCellDef>time</th>
+      <td cdk-cell *cdkCellDef="let row">{{row.date | date: 'hh:mm'}}</td>
+    </ng-container>
+    <ng-container cdkColumnDef="date">
+      <th cdk-header-cell *cdkHeaderCellDef>date</th>
+      <td cdk-cell *cdkCellDef="let row">{{row.date | date: 'MM:dd:yyyy'}}</td>
+    </ng-container>
+    <ng-container cdkColumnDef="title">
+      <th cdk-header-cell *cdkHeaderCellDef>title</th>
+      <td cdk-cell *cdkCellDef="let row">{{row.name}}</td>
+    </ng-container>
+    <ng-container cdkColumnDef="description">
+      <th cdk-header-cell *cdkHeaderCellDef>description</th>
+      <td cdk-cell *cdkCellDef="let row">{{row.description}}</td>
+    </ng-container>
+    <ng-container cdkColumnDef="list-purchase">
+      <th cdk-header-cell *cdkHeaderCellDef>list purchase</th>
+      <td cdk-cell *cdkCellDef="let row">{{row.list_purchase}}</td>
+    </ng-container>
+    <ng-container >
+    <tr cdk-header-row *cdkHeaderRowDef=displayedColumns></tr>
+      <tr cdk-row *cdkRowDef="let row; columns: displayedColumns"></tr>
+    </ng-container>
+  </table>
+  </div>
+</section>

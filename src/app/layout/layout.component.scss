@@ -1,0 +1,171 @@
+@import 'src/styles';
+.first-block {
+  background-image: url("../../assets/img/general-img.jpg");
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  padding: 1px;
+  border-bottom: 1px solid $color-header;
+  @include mobile {
+    background-size: 171%;
+    background-position: 61% 12%;
+    height: 300px;
+  }
+  @include tablet {
+    height: 600px;
+    background-size: 135%;
+  }
+  @include desktop {
+    height: 800px;
+    background-position: 0 30%;
+    background-size: 100%;
+    opacity: 0.5;
+    border-bottom: 2px solid $color-header;
+  }
+}
+.wrapper {
+  position: relative;
+}
+.container {
+  position: absolute;
+  @include mobile {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include tablet {
+    top: 205px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include desktop {
+    top: 268px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &.advantage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    margin-top: 50px;
+    margin-bottom: 70px;
+    @include tablet {
+      margin-top: 70px;
+    }
+    .list-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+      .item {
+        text-transform: lowercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 110px;
+        @include tablet {
+          width: 250px;
+        }
+        .btn-icon {
+          @include tablet {
+            width: 60px;
+            height: 70px;
+          }
+          width: 50px;
+          height: 50px;
+          background-size: 130%;
+          background-position: center;
+          margin-bottom: 10px;
+          position: relative;
+          &.time {
+            background-image: url("../../assets/img/hourglass.svg");
+          }
+          &.bell {
+           background-image: url("../../assets/img/_shout.svg");
+          }
+          &.mobile {
+            background-image: url("../../assets/img/love-chat.svg");
+          }
+        }
+      }
+    }
+  }
+}
+.text {
+  @include mobile {
+    font-size: 20px;
+  }
+  @include tablet {
+    font-size: 35px;
+  }
+  @include desktop {
+    font-size: 46px;
+  }
+  &.header {
+    text-shadow: 1px 1px 3px rgba($color-header, 0.3);
+  }
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  color: $color-title;
+  text-align: center;
+  &.advantage {
+    text-transform: uppercase;
+    font-size: 16px;
+    @include tablet {
+      font-size: 20px;
+    }
+    @include desktop {
+      font-size: 24px;
+
+    }
+  }
+}
+.title {
+  @include mobile {
+    font-size: 30px;
+  }
+  @include tablet {
+    font-size: 65px;
+    line-height: 71px;
+  }
+  @include desktop {
+    font-size: 89px;
+    line-height: 95px;
+  }
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1px;
+  color: $color-title;
+  &.advantage {
+    color: $color-header;
+    font-size: 21px;
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: 32px;
+    }
+    @include desktop {
+      font-size: 42px;
+    }
+  }
+}
+.btn {
+  margin-bottom: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 20px;
+}

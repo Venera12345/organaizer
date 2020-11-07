@@ -1,0 +1,15 @@
+<div class="border">
+  <section class="container">
+  <p class="logo" routerLink="./" (click)="goToLayout()">MOM`s</p>
+  <nav class="wrapper">
+    <button class="btn-icon mobile" (click)="switchMenu()"></button>
+    <ul class="list-menu no-mobile" [class.open]="showMenu" [class.close]="animationClose">
+      <li class="item-menu" *ngIf="showButton"><button class="btn">SING IN</button></li>
+      <li class="item-menu"><a routerLinkActive="calendar" routerLink="./calendar" class="link-menu" (click)="closeMenu()">calendar</a></li>
+      <li class="item-menu"><a routerLinkActive="diary" routerLink="./diary" class="link-menu" (click)="closeMenu()">diary</a></li>
+      <li class="item-menu"><a routerLinkActive="list-purchase" routerLink="./list-purchase" class="link-menu" (click)="closeMenu()">list purchase</a></li>
+      <li class="item-menu"><a routerLinkActive="day-book" routerLink="./day-book" class="link-menu" (click)="closeMenu()">day book</a></li>
+    </ul>
+  </nav>
+</section>
+</div>

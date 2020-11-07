@@ -1,0 +1,58 @@
+@import "src/styles";
+.title {
+  letter-spacing: -1px;
+}
+.wrapper-mobile {
+  overflow: auto;
+}
+table {
+  width: 100%;
+  th {
+    text-transform: uppercase;
+    color: $color-header;
+    background-color: $color-element ;
+    padding: 10px;
+    border: 1px solid $color-title;
+    &:first-child {
+      background-color: transparent;
+      border: none;
+    }
+  }
+  td {
+    color: $color-title;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid $color-title;
+    background-color: rgba(#fff, 0.3);
+    position: relative;
+    min-height: 80px;
+    &:first-child {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      width: 35px;
+    }
+  }
+}
+.btn-icon {
+  &.btn-delete {
+    right: 5px;
+    top: 40px;
+  }
+  &.btn-edit {
+    right: 5px;
+    left: 0;
+    top: 10px;
+  }
+  @include tablet {
+    &.btn-delete {
+      right: 5px;
+      top: 10px;
+    }
+    &.btn-edit {
+      right: 0;
+      left: 5px;
+      top: 10px
+    }
+  }
+}

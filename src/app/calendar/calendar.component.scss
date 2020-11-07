@@ -1,0 +1,49 @@
+@import "src/styles";
+.container {
+  position: relative;
+  padding: 1px;
+}
+.wrapper-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  @include tablet {
+    top: 36px;
+  }
+  @include desktop {
+    top: 62px;
+  }
+}
+.calendar {
+  margin-bottom: 20px;
+  margin-top: 75px;
+   @include tablet {
+     margin-top: 40px;
+   }
+  @include desktop {
+    margin-top: 65px;
+  }
+  .fc {
+    .fc-toolbar-title {
+      color: $color-header;
+      font-size: 32px;
+      letter-spacing: -2px;
+    }
+  }
+}
+.btn {
+  &.btn-today {
+    margin-right: auto;
+    @include tablet {
+      margin-right: 20px;
+    }
+  }
+    margin-left: 5px;
+}
+
+

@@ -1,0 +1,152 @@
+@import "src/styles";
+.border{
+  border-bottom: 1px solid $color-header;
+  @include desktop {
+    border-bottom: 2px solid $color-header;
+  }
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  @include mobile {
+    align-items: center;
+  }
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.btn-icon {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  background-image: url("../../../assets/img/burger.svg");
+}
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: $color-header;
+  font-size: 14px;
+  font-weight: bolder;
+  border: 1px solid #012b4d;
+  border-radius: 50%;
+  padding: 4px;
+  outline: none;
+  @include tablet {
+    font-size: 16px;
+  }
+  @include desktop {
+    font-size: 20px;
+    border: 2px solid #012b4d;
+  }
+
+}
+
+.list-menu {
+  display: flex;
+  list-style: none;
+  background-color: $color-main;
+  @include mobile {
+    &.no-mobile {
+      display: none;
+    }
+    &.open {
+      display: block;
+      animation-name: open;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    &.close {
+      animation-name: close;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    top: 70px;
+    right: -10px;
+    height: 100vh;
+    width: 205px;
+    align-items: flex-end;
+  }
+  @include tablet {
+    &.no-mobile {
+      display: flex;
+    }
+    &.open {
+      animation: none;
+    }
+    &.close {
+      animation: none;
+    }
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    position: relative;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: fit-content;
+    align-items: flex-end;
+    background-color: transparent;
+  }
+  @include desktop {
+  }
+
+  .item-menu {
+    padding: 10px 15px;
+
+    &:hover {
+      background-color: $color-element;
+      .link-menu {
+        //color: $color-element;
+      }
+    }
+
+    .link-menu {
+      color: $color-header;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+  }
+}
+
+.btn-icon {
+
+}
+
+.mobile {
+  @include mobile {
+    display: block;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+
+@keyframes open {
+  0% {
+    right: -215px;
+  }
+  100% {
+    right: -10px;
+  }
+}
+
+@keyframes close {
+  100% {
+    right: -215px;
+  }
+  0% {
+    right: -10px;
+  }
+
+}

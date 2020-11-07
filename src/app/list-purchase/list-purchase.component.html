@@ -1,0 +1,37 @@
+<section class="container">
+  <div class="wrapper-header">
+    <h2 class="title">list purchase</h2>
+    <button class="btn">+</button>
+  </div>
+  <div class="wrapper-table">
+    <ul class="list-purchase">
+      <li class="item" *ngFor="let purchase of listPurchase">
+        <div class="wrapper-header card">
+          <h3 class="title purchase">{{purchase.name}}</h3>
+          <button class="btn-icon btn-delete" (click)="delete(purchase)"></button>
+          <button class="btn-icon btn-edit" (click)="change(purchase)" *ngIf="changeElement !== purchase.id"></button>
+        </div>
+        <ul class="list-goods" *ngFor="let good of purchase.goods; let i = index">
+          <li class="item-good">
+            <span class="text">{{ i + 1 }}</span>
+            <span class="text" *ngIf="changeElement !== purchase.id">{{good.name_good}}</span>
+            <input type="text"
+                   class="input"
+                   [(ngModel)]="dataForChanging[i].name_good"
+                   *ngIf="changeElement === purchase.id">
+            <span class="text" *ngIf="changeElement !== purchase.id">{{good.amount}}</span>
+            <input type="text"
+                   class="input"
+                   [(ngModel)]="dataForChanging[i].amount"
+                   *ngIf="changeElement === purchase.id">
+          </li>
+        </ul>
+        <div class="wrapper-btn" *ngIf="changeElement === purchase.id">
+          <button class="btn" type="button" (click)="addGood()">+</button>
+          <button class="btn" type="button">save</button>
+          <button class="btn" type="button" (click)="cancelChange()">cancel</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

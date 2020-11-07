@@ -1,0 +1,8 @@
+<section class="container">
+  <div class="wrapper-btn">
+    <button (click)="goToday()" class="btn btn-today"> today</button>
+    <button (click)="goPrev()" class="btn"> <</button>
+    <button (click)="goNext()" class="btn"> ></button>
+  </div>
+  <full-calendar #calendar [options]="calendarOptions" deepChangeDetection="true" class="calendar"></full-calendar>
+</section>
