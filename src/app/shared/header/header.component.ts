@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
+import {SingInComponent} from '../modal/sing-in/sing-in.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +12,14 @@ export class HeaderComponent implements OnInit {
   showMenu: boolean;
   animationClose: boolean;
   showButton: boolean;
+  generalPage: boolean;
 
-  constructor(private route: Router) {
+  constructor(private route: ActivatedRoute,
+              private modalDialog: MatDialog) {
   }
 
   ngOnInit(): void {
+console.log(window.location.href.slice(-1,0))
 
   }
 
@@ -27,6 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   closeMenu() {
+
     this.animationClose = true;
     setTimeout(() => {
       this.showMenu = !this.showMenu;
@@ -34,6 +40,12 @@ export class HeaderComponent implements OnInit {
     }, 1000);
   }
 
-  goToLayout() {
+  openPopup(singUp?: boolean) {
+    this.modalDialog.open(SingInComponent, {
+      autoFocus: true,
+      data: {
+        singUp
+      }
+    })
   }
 }

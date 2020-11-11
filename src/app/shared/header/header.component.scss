@@ -25,6 +25,7 @@
 }
 
 .logo {
+  text-decoration: none;
   margin-top: 20px;
   margin-bottom: 20px;
   color: $color-header;
@@ -99,11 +100,13 @@
 
   .item-menu {
     padding: 10px 15px;
-
+    align-self: center;
     &:hover {
       background-color: $color-element;
-      .link-menu {
-        //color: $color-element;
+    }
+    &:last-of-type {
+      &:hover {
+        background-color: transparent;
       }
     }
 
@@ -149,4 +152,7 @@
     right: -10px;
   }
 
+}
+.btn {
+  padding: 11px 15px;
 }

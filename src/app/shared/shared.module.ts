@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import { ModalApproveComponent } from './modal/modal-approve/modal-approve.component';
 import { SingInComponent } from './modal/sing-in/sing-in.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -23,7 +24,8 @@ import {MatDialogModule} from '@angular/material/dialog';
   imports: [
     CommonModule,
     MatDialogModule,
-    RouterModule.forChild([])
+    RouterModule.forChild([]),
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

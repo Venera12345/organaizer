@@ -1,1 +1,22 @@
-<p>sing-in works!</p>
+<section class="modal">
+  <button type="button" class="btn-icon btn-close" (click)="close()"></button>
+  <form class="form" formGroup="form" (ngSubmit)="submitForm()">
+    <p class="wrapper-input">
+    <label>Email:</label>
+    <input formControlName="email" placeholder="email*" type="email">
+    </p>
+    <p class="wrapper-input">
+    <label>Password:</label>
+    <input formControlName="password" placeholder="*" type="password">
+    </p>
+    <p class="wrapper-input" *ngIf="data.singUp">
+    <label></label>
+    <input formControlName="password_repeat" placeholder="*" type="password">
+    </p>
+    <div class="wrapper-btn" [class.reverse]="data.singUp">
+    <button class="btn" (click)="changePopup()" type="submit">{{!data.singUp ? 'sing in' : 'sing up' }}</button>
+    <button (click)="changePopup(!data.singUp)">{{data.singUp ? 'sing in' : 'sing up' }}</button>
+    <button >forgot password</button>
+    </div>
+  </form>
+</section>
