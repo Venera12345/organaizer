@@ -1,8 +1,8 @@
-<section class="container">
-  <div class="wrapper-btn">
-    <button (click)="goToday()" class="btn btn-today"> today</button>
-    <button (click)="goPrev()" class="btn"> <</button>
-    <button (click)="goNext()" class="btn"> ></button>
+<section class="calendar__container container">
+  <div class="calendar__wrapper-button">
+    <button (click)="goToday()" class="calendar__button--blue calendar__button-today button--blue"> today</button>
+    <button (click)="goPrev()" class="calendar__button--blue button--blue"> <</button>
+    <button (click)="goNext()" class="calendar__button--blue button--blue"> ></button>
   </div>
-  <full-calendar #calendar [options]="calendarOptions" deepChangeDetection="true" class="calendar"></full-calendar>
+  <full-calendar #calendar [options]="calendarOptions" deepChangeDetection="true" class="calendar__block"></full-calendar>
 </section>

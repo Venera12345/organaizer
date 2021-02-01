@@ -82,7 +82,19 @@ $mobile-width: 320px;
     @content;
   }
 }
-
+%button--icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 100%;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+}
 html, body, ul, li, p, a, span, div, button {
   margin: 0;
   padding: 0;
@@ -106,6 +118,7 @@ input, button, textarea, select {
   &:focus,
   &:hover {
     outline: none;
+    border: none;
   }
 }
 
@@ -143,9 +156,34 @@ body {
   margin-right: auto;
 }
 
-.btn {
+.button--blue {
   background-color: $color-header;
   color: $color-element;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  &:hover,
+  &:focus {
+    color: $color-main;
+  }
+}
+.button--white {
+  background-color: $color-header;
+  color: $color-element;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    color: $color-main;
+  }
+}
+.button--brown {
+  background-color: $color-title;
+  color: $color-main;
   padding: 10px 15px;
   font-size: 14px;
   border: none;
@@ -157,19 +195,10 @@ body {
   }
 }
 
-.btn-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: 100%;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  &.btn-delete {
+.button--icon {
+  @extend %button--icon;
+  &-delete {
+    @extend %button--icon;
     background-size: 76%;
     background-image: url("./assets/img/delete.svg");
     &:hover {
@@ -177,7 +206,8 @@ body {
     }
   }
 
-  &.btn-edit {
+  &-edit {
+    @extend %button--icon;
     width: 15px;
     height: 18px;
     background-image: url("./assets/img/edit.svg");
@@ -185,7 +215,8 @@ body {
       background-image: url("./assets/img/edit-active.svg");
     }
   }
-  &.btn-close {
+  &-close {
+    @extend %button--icon;
     background-image: url("./assets/img/close.svg");
     &:hover {
       background-image: url("./assets/img/close-active.svg");
@@ -202,30 +233,29 @@ body {
   align-items: center;
   margin-bottom: 20px;
   margin-top: 20px;
+  .button--blue {
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 16px
+  }
   @include tablet {
     margin-top: 40px;
   }
   @include desktop {
     margin-top: 65px;
   }
-
-  .title {
-    @include tablet {
-      font-size: 26px;
-    }
-    @include desktop {
-      font-size: 32px;
-    }
-    margin-bottom: 0;
-  }
-
-  .btn {
-    margin-left: 20px;
-    padding: 5px 10px;
-    font-size: 16px
-  }
-
 }
+
+.title {
+  @include tablet {
+    font-size: 26px;
+  }
+  @include desktop {
+    font-size: 32px;
+  }
+  margin-bottom: 0;
+}
+
 .input {
   border: 1px solid $color-header;
   border-radius: 6px;

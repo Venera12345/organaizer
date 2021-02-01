@@ -1,15 +1,15 @@
-<section class="container">
-  <div class="wrapper-header">
-    <h2 class="title">diary</h2>
-    <button class="btn">+</button>
+<section class="diary__container container">
+  <div class="diary__wrapper-header wrapper-header">
+    <h2 class="diary__title title">diary</h2>
+    <button class="diary__button--blue button--blue">+</button>
   </div>
-  <div class="wrapper-mobile">
+  <div class="diary__wrapper-table">
   <table cdk-table  [dataSource]="dataSource">
     <ng-container cdkColumnDef="btn">
       <th cdk-header-cell *cdkHeaderCellDef></th>
       <td cdk-cell *cdkCellDef="let row">
-        <button class="btn-icon btn-edit"></button>
-        <button class="btn-icon btn-delete" (click)="delete(row)"></button>
+        <button class="button--icon-edit"></button>
+        <button class="button--icon-delete" (click)="delete(row)"></button>
       </td>
     </ng-container>
     <ng-container cdkColumnDef="time">

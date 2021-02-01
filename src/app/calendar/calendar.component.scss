@@ -1,9 +1,9 @@
 @import "src/styles";
-.container {
+.calendar__container {
   position: relative;
   padding: 1px;
 }
-.wrapper-btn {
+.calendar__wrapper-button {
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -19,7 +19,7 @@
     top: 62px;
   }
 }
-.calendar {
+.calendar__block {
   margin-bottom: 20px;
   margin-top: 75px;
    @include tablet {
@@ -36,14 +36,13 @@
     }
   }
 }
-.btn {
-  &.btn-today {
-    margin-right: auto;
-    @include tablet {
-      margin-right: 20px;
-    }
-  }
+.calendar__button--blue {
     margin-left: 5px;
 }
-
+.calendar__button-today {
+  margin-right: auto;
+  @include tablet {
+    margin-right: 20px;
+  }
+}
 

@@ -1,35 +1,35 @@
-<section class="container">
-  <div class="wrapper-header">
-    <h2 class="title">list purchase</h2>
-    <button class="btn">+</button>
+<section class="list-purchase__container container">
+  <div class="list-purchase__wrapper-header wrapper-header">
+    <h2 class="list-purchase__title title">list purchase</h2>
+    <button class="list-purchase__button--blue button--blue">+</button>
   </div>
-  <div class="wrapper-table">
-    <ul class="list-purchase">
-      <li class="item" *ngFor="let purchase of listPurchase">
-        <div class="wrapper-header card">
-          <h3 class="title purchase">{{purchase.name}}</h3>
-          <button class="btn-icon btn-delete" (click)="delete(purchase)"></button>
-          <button class="btn-icon btn-edit" (click)="change(purchase)" *ngIf="changeElement !== purchase.id"></button>
+  <div class="list-purchase__wrapper-table">
+    <ul class="list-purchase__list-item">
+      <li class="list-item__item" *ngFor="let purchase of listPurchase">
+        <div class="list-item__wrapper-header--card wrapper-header">
+          <h3 class="list-item__title--purchase">{{purchase.name}}</h3>
+          <button class="list-item__button--icon-delete button--icon-delete" (click)="delete(purchase)"></button>
+          <button class="list-item__button--icon-edit button--icon-edit" (click)="change(purchase)" *ngIf="changeElement !== purchase.id"></button>
         </div>
-        <ul class="list-goods" *ngFor="let good of purchase.goods; let i = index">
-          <li class="item-good">
-            <span class="text">{{ i + 1 }}</span>
-            <span class="text" *ngIf="changeElement !== purchase.id">{{good.name_good}}</span>
+        <ul class="list-purchase__list-item--goods" *ngFor="let good of purchase.goods; let i = index">
+          <li class="list-item--goods__item">
+            <span class="list-item--goods__text">{{ i + 1 }}</span>
+            <span class="list-item--goods__text" *ngIf="changeElement !== purchase.id">{{good.name_good}}</span>
             <input type="text"
-                   class="input"
+                   class="list-item--goods__input input"
                    [(ngModel)]="dataForChanging[i].name_good"
                    *ngIf="changeElement === purchase.id">
-            <span class="text" *ngIf="changeElement !== purchase.id">{{good.amount}}</span>
+            <span class="list-item--goods__text" *ngIf="changeElement !== purchase.id">{{good.amount}}</span>
             <input type="text"
-                   class="input"
+                   class="list-item--goods__input input"
                    [(ngModel)]="dataForChanging[i].amount"
                    *ngIf="changeElement === purchase.id">
           </li>
         </ul>
-        <div class="wrapper-btn" *ngIf="changeElement === purchase.id">
-          <button class="btn" type="button" (click)="addGood()">+</button>
-          <button class="btn" type="button">save</button>
-          <button class="btn" type="button" (click)="cancelChange()">cancel</button>
+        <div class="list-purchase__wrapper-button" *ngIf="changeElement === purchase.id">
+          <button class="list-purchase__button--blue button--blue" type="button" (click)="addGood()">+</button>
+          <button class="list-purchase__button--blue button--blue" type="button">save</button>
+          <button class="list-purchase__button--blue button--blue" type="button" (click)="cancelChange()">cancel</button>
         </div>
       </li>
     </ul>

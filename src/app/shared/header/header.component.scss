@@ -1,11 +1,13 @@
 @import "src/styles";
-.border{
+.header__wrapper-header{
   border-bottom: 1px solid $color-header;
+  margin-bottom: 0;
+  margin-top: 0;
   @include desktop {
     border-bottom: 2px solid $color-header;
   }
 }
-.container {
+.header__container {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -17,14 +19,20 @@
   }
 }
 
-.btn-icon {
+.header__button--icon-mobile {
   width: 25px;
   height: 25px;
   position: relative;
   background-image: url("../../../assets/img/burger.svg");
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
 }
 
-.logo {
+.header__logo {
   text-decoration: none;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -45,12 +53,12 @@
 
 }
 
-.list-menu {
+.header__list-menu {
   display: flex;
   list-style: none;
   background-color: $color-main;
   @include mobile {
-    &.no-mobile {
+    &--no-mobile {
       display: none;
     }
     &.open {
@@ -74,7 +82,7 @@
     align-items: flex-end;
   }
   @include tablet {
-    &.no-mobile {
+    &--no-mobile {
       display: flex;
     }
     &.open {
@@ -95,44 +103,25 @@
     align-items: flex-end;
     background-color: transparent;
   }
-  @include desktop {
-  }
+}
 
-  .item-menu {
-    padding: 10px 15px;
-    align-self: center;
+.header__item-menu {
+  padding: 10px 15px;
+  align-self: center;
+  &:hover {
+    background-color: $color-element;
+  }
+  &:last-of-type {
     &:hover {
-      background-color: $color-element;
-    }
-    &:last-of-type {
-      &:hover {
-        background-color: transparent;
-      }
-    }
-
-    .link-menu {
-      color: $color-header;
-      font-size: 14px;
-      text-transform: uppercase;
-      font-weight: bolder;
+      background-color: transparent;
     }
   }
 }
-
-.btn-icon {
-
-}
-
-.mobile {
-  @include mobile {
-    display: block;
-  }
-  @include tablet {
-    display: none;
-  }
-  @include desktop {
-    display: none;
-  }
+.header__link-menu {
+  color: $color-header;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 @keyframes open {
@@ -152,7 +141,4 @@
     right: -10px;
   }
 
-}
-.btn {
-  padding: 11px 15px;
 }

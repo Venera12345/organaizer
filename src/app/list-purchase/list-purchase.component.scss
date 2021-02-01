@@ -1,5 +1,5 @@
 @import "src/styles";
-.wrapper-table {
+.list-purchase__wrapper-table {
   background-image: url("../../assets/img/table.png");
   background-size: 180%;
   width: 100%;
@@ -13,7 +13,7 @@
     background-size: 120%;
   }
 }
-.list-purchase {
+.list-purchase__list-item {
   height: fit-content;
   padding: 1px;
   @include tablet {
@@ -23,45 +23,45 @@
     align-items: flex-start;
     padding-bottom: 20px;
   }
-  .item {
-    background-image: url("../../assets/img/paper.jpg");
-    background-repeat: repeat;
-    padding: 10px;
-    background-position-x: -33px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+}
+.list-item__item {
+  background-image: url("../../assets/img/paper.jpg");
+  background-repeat: repeat;
+  padding: 10px;
+  background-position-x: -33px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  box-shadow: 4px 4px 8px rgba($color-header, 0.4);
+  position: relative;
+  &:last-child {
+    margin-bottom: 20px;
+  }
+  @include tablet {
+    width: 40%;
+    margin-left: 20px;
+    margin-right: 0;
     margin-top: 20px;
-    box-shadow: 4px 4px 8px rgba($color-header, 0.4);
-    position: relative;
     &:last-child {
-      margin-bottom: 20px;
-    }
-    @include tablet {
-      width: 40%;
-      margin-left: 20px;
-      margin-right: 0;
-      margin-top: 20px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    @include desktop {
-      width: 26%;
+      margin-bottom: 0;
     }
   }
+  @include desktop {
+    width: 26%;
+  }
 }
-.item-good {
+.list-item--goods__item {
   min-height: 19px;
   display: flex;
-  .text {
-    margin-left: 10px;
-    font-size: 15px;
-    line-height: 16px;
-    color: $color-title;
-    &:first-child {
-      font-weight: bold;
-    }
+}
+.list-item--goods__text {
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 16px;
+  color: $color-title;
+  &:first-child {
+    font-weight: bold;
   }
 }
 .title {

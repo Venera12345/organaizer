@@ -2,7 +2,7 @@
 .title {
   letter-spacing: -1px;
 }
-.wrapper-mobile {
+.diary__wrapper-table {
   overflow: auto;
 }
 table {
@@ -34,25 +34,21 @@ table {
     }
   }
 }
-.btn-icon {
-  &.btn-delete {
+.button--icon-delete {
     right: 5px;
     top: 40px;
-  }
-  &.btn-edit {
-    right: 5px;
-    left: 0;
-    top: 10px;
-  }
-  @include tablet {
-    &.btn-delete {
+    @include tablet {
       right: 5px;
       top: 10px;
     }
-    &.btn-edit {
+  }
+.button--icon-edit {
+    right: 5px;
+    left: 0;
+    top: 10px;
+    @include tablet {
       right: 0;
       left: 5px;
       top: 10px
     }
   }
-}

@@ -1,5 +1,8 @@
 @import 'src/styles';
-.first-block {
+.layout__wrapper {
+  position: relative;
+}
+.layout__background-block {
   background-image: url("../../assets/img/general-img.jpg");
   background-repeat: no-repeat;
   opacity: 0.6;
@@ -22,9 +25,6 @@
     border-bottom: 2px solid $color-header;
   }
 }
-.wrapper {
-  position: relative;
-}
 .container {
   position: absolute;
   @include mobile {
@@ -42,68 +42,23 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  &.advantage {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    transform: translate(0);
-    margin-top: 50px;
-    margin-bottom: 70px;
-    @include tablet {
-      margin-top: 70px;
-    }
-    .list-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      @include tablet {
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        justify-content: space-around;
-        margin-top: 50px;
-      }
-      .item {
-        text-transform: lowercase;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        margin-bottom: 20px;
-        width: 110px;
-        @include tablet {
-          width: 250px;
-        }
-        .btn-icon {
-          @include tablet {
-            width: 60px;
-            height: 70px;
-          }
-          width: 50px;
-          height: 50px;
-          background-size: 130%;
-          background-position: center;
-          margin-bottom: 10px;
-          position: relative;
-          &.time {
-            background-image: url("../../assets/img/hourglass.svg");
-          }
-          &.bell {
-           background-image: url("../../assets/img/_shout.svg");
-          }
-          &.mobile {
-            background-image: url("../../assets/img/love-chat.svg");
-          }
-        }
-      }
-    }
+}
+.layout__advantage-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transform: translate(0);
+  margin-top: 50px;
+  margin-bottom: 70px;
+  @include tablet {
+    margin-top: 70px;
   }
 }
-.text {
+.layout__text {
   @include mobile {
     font-size: 20px;
   }
@@ -113,7 +68,7 @@
   @include desktop {
     font-size: 46px;
   }
-  &.header {
+  &-header {
     text-shadow: 1px 1px 3px rgba($color-header, 0.3);
   }
   width: fit-content;
@@ -121,7 +76,7 @@
   margin-right: auto;
   color: $color-title;
   text-align: center;
-  &.advantage {
+  &-advantage {
     text-transform: uppercase;
     font-size: 16px;
     @include tablet {
@@ -133,7 +88,7 @@
     }
   }
 }
-.title {
+.layout__title {
   @include mobile {
     font-size: 30px;
   }
@@ -150,7 +105,7 @@
   margin-right: auto;
   padding: 1px;
   color: $color-title;
-  &.advantage {
+  &-advantage {
     color: $color-header;
     font-size: 21px;
     margin-bottom: 20px;
@@ -162,7 +117,7 @@
     }
   }
 }
-.btn {
+.layout__button--blue {
   margin-bottom: 85px;
   margin-left: auto;
   margin-right: auto;
@@ -171,4 +126,49 @@
   @include tablet {
     margin-top: 70px;
   }
+}
+.advantage__list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+}
+.advantage__item {
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 110px;
+  @include tablet {
+    width: 250px;
+  }
+}
+.button--icon {
+  @include tablet {
+    width: 60px;
+    height: 70px;
+  }
+  width: 50px;
+  height: 50px;
+  background-size: 130%;
+  background-position: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+.advantage__button--icon-time {
+  background-image: url("../../assets/img/hourglass.svg");
+}
+.advantage__button--icon-bell {
+  background-image: url("../../assets/img/_shout.svg");
+}
+.advantage__button--icon-mobile {
+  background-image: url("../../assets/img/love-chat.svg");
 }

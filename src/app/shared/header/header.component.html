@@ -1,14 +1,14 @@
-<div class="border">
-  <section class="container">
-  <a class="logo" routerLink="./" (click)="closeMenu()">MOM`s</a>
-  <nav class="wrapper">
-    <button class="btn-icon mobile" (click)="switchMenu()"></button>
-    <ul class="list-menu no-mobile" [class.open]="showMenu" [class.close]="animationClose">
-      <li class="item-menu"><a routerLinkActive="calendar" routerLink="./calendar" class="link-menu" (click)="closeMenu()">calendar</a></li>
-      <li class="item-menu"><a routerLinkActive="diary" routerLink="./diary" class="link-menu" (click)="closeMenu()">diary</a></li>
-      <li class="item-menu"><a routerLinkActive="list-purchase" routerLink="./list-purchase" class="link-menu" (click)="closeMenu()">list purchase</a></li>
-      <li class="item-menu"><a routerLinkActive="day-book" routerLink="./day-book" class="link-menu" (click)="closeMenu()">day book</a></li>
-      <li class="item-menu" *ngIf=""><button class="btn" (click)="openPopup()">SING IN</button></li>
+<div class="header__wrapper-header wrapper-header">
+  <section class="header__container container">
+  <a class="header__logo" routerLink="./" (click)="closeMenu()">MOM`s</a>
+  <nav class="header__wrapper-navigate">
+    <button class="header__button--icon-mobile button--icon" (click)="switchMenu()"></button>
+    <ul class="header__list-menu header__list-menu--no-mobile" [class.open]="showMenu" [class.close]="animationClose">
+      <li class="header__item-menu"><a routerLinkActive="calendar" routerLink="./calendar" class="header__link-menu" (click)="closeMenu()">calendar</a></li>
+      <li class="header__item-menu"><a routerLinkActive="diary" routerLink="./diary" class="header__link-menu" (click)="closeMenu()">diary</a></li>
+      <li class="header__item-menu"><a routerLinkActive="list-purchase" routerLink="./list-purchase" class="header__link-menu" (click)="closeMenu()">list purchase</a></li>
+      <li class="header__item-menu"><a routerLinkActive="day-book" routerLink="./day-book" class="header__link-menu" (click)="closeMenu()">day book</a></li>
+      <li class="header__item-menu"><button class="header__button--blue button--blue" (click)="openPopup()">SING IN</button></li>
     </ul>
   </nav>
 </section>
